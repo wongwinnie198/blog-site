@@ -2,7 +2,9 @@ import { MantineProvider } from "@mantine/core";
 
 import Head from "next/head";
 import Navigation from "../components/Navigation";
+import Blogs from "../components/Blogs";
 
+import styles from '../styles/Home.module.scss'
 export default function Home() {
   return (
     <>
@@ -20,8 +22,9 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
         </div>
-        <div>
+        <div className={styles.homeBodyContainer}>
           <Navigation />
+          <Blogs />
         </div>
       </MantineProvider>
     </>
