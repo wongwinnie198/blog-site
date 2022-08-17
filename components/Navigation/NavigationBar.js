@@ -13,7 +13,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    padding: "2rem 0",
+    padding: "4rem 0",
     // Dynamic media queries, define breakpoints in theme, use anywhere
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       // Type safe child reference in nested selectors via ref
@@ -26,16 +26,12 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   links: {
     // assign ref to element
     ref: getRef("child"),
-    width: "100%",
-    padding:"0 1rem",
-    backgroundColor:
-      theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
-    paddingTop: theme.spacing.md,
+    width: "90%",
+    padding: "1rem",
+    paddingLeft: "0.5rem",
     borderRadius: theme.radius.sm,
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: "Proxima Nova Light",
     alignSelf:"start",
-    verticalAlign:"center",
     '&:hover': {
       backgroundColor: theme.colors.gray[7],
       color:theme.colors.gray[0],
@@ -52,13 +48,13 @@ const NavigationBar = () => {
   const { classes } = useStyles();
 
   return (
-    <Box className={classes.container} sx={{ width: 240 }}>
+    <div className={classes.container} sx={{ width: 240 }}>
       {NavigationTabData.map((ele, ind) => (
         <div className={classes.links} key={ind}>
           <Text className={classes.linkText}>{ele}</Text>
         </div>
       ))}
-    </Box>
+    </div>
   );
 };
 
